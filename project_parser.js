@@ -5,56 +5,70 @@ async function loadProjects() {
   const projects = parseCSV(csv);
   const container = document.querySelector("#projects");
 
-  container.innerHTML = `
-    <div class="grid">
-      ${projects.map(project => `
-        <a
-          class="card"
-          href="${project.link}"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="card-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-            <small>${project.file}</small>
-          </div>
+  const customCards = [...container.children];
 
-          <div class="card-body">
-            <h3 class="card-title">${project.title}</h3>
+  const projectCards = projects.map(project => `
+    <article
+      class="card"
+      data-order="${project.order}"
+    >
+      <div class="card-bar">
+        <span></span>
+        <span></span>
+        <span></span>
+        <small>${project.file}</small>
+      </div>
 
-            <p class="card-desc">
-              ${project.description}
-            </p>
+      <div class="card-body">
+        <h3 class="card-title">${project.title}</h3>
 
-            <div class="tags">
-              ${project.tags
-                .split(",")
-                .map(tag => `<span>${tag.trim()}</span>`)
-                .join("")}
-            </div>
+        <p class="card-desc">
+          ${project.description}
+        </p>
 
-            <div class="card-go">
-              view project
+        <div class="tags">
+          ${project.tags
+            .split(";")
+            .map(tag => `<span>${tag.trim()}</span>`)
+            .join("")}
+        </div>
 
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+        <div class="card-actions">
+          <a class="card-go" href="${project.link}" target="_blank" rel="noopener">
+            view project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+
+          ${project.repo_link ? `
+            <a class="card-go card-repo" href="${project.repo_link}" target="_blank" rel="noopener">
+              view repo code
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7" />
                 <polyline points="7 7 17 7 17 17" />
               </svg>
-            </div>
-          </div>
-        </a>
-      `).join("")}
-    </div>
-  `;
+            </a>
+          ` : ""}
+        </div>
+      </div>
+    </article>
+  `);
+
+  container.innerHTML = projectCards.join("");
+
+  customCards.forEach(card => {
+    container.appendChild(card);
+  });
+
+  const cards = [...container.children];
+
+  cards.sort((a, b) => {
+    return Number(a.dataset.order) - Number(b.dataset.order);
+  });
+
+  cards.forEach(card => container.appendChild(card));
 }
 
 function parseCSV(csv) {
