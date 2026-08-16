@@ -334,6 +334,7 @@
         padding: 48px 0;
       }
     }
+  
   </style>
 </head>
 
@@ -351,89 +352,94 @@
       </p>
       <div class="links">
         <a class="btn solid" href="#proyectos">See Projects</a>
-        <a class="btn" href="mailto:rodrigosebastiandavila@gmail.com">Contact me!</a>
+        <a class="btn" href="mailto:rodrigosebastiandavila@gmail.com">Contact me</a>
         <a class="btn" href="https://github.com/davilarodrigo" target="_blank" rel="noopener">GitHub</a>
       </div>
     </header>
 
-    <img src="./img/imagetest.png"  >
+<!--
+    working github pages image example
+  <img src="./img/imagetest.png"  >
+  -->
 
-    <section id="proyectos">
-      <div class="section-label">Projects</div>
-      <h2 class="section-title">What I have been working on</h2>
-
-      <div class="grid">
-
-        <!-- == CARD TEMPLATE == -->
-        <a class="card" href="https://tu-link-aca.com" target="_blank" rel="noopener">
-          <div class="card-bar">
-            <span></span><span></span><span></span>
-            <small>proyecto.js</small>
+  
+  <section id="proyectos">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">What I have been working on</h2>
+    
+    <div class="grid">
+      
+      <!-- == CARD TEMPLATE == -->
+      <a class="card" href="https://tu-link-aca.com" target="_blank" rel="noopener">
+        <div class="card-bar">
+          <span></span><span></span><span></span>
+          <small>proyecto.js</small>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">nombre-del-proyecto</h3>
+          <p class="card-desc">Descripción corta de qué hace el proyecto y qué usaste para hacerlo.</p>
+          <div class="tags">
+            <span>React</span>
+            <span>Node.js</span>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">nombre-del-proyecto</h3>
-            <p class="card-desc">Descripción corta de qué hace el proyecto y qué usaste para hacerlo.</p>
-            <div class="tags">
-              <span>React</span>
-              <span>Node.js</span>
-            </div>
-            <div class="card-go">
+          <div class="card-go">
               ver proyecto
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
+              stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
           </div>
-        </a>
-
-        <a class="card" href="https://tu-link-aca.com" target="_blank" rel="noopener">
-          <div class="card-bar">
-            <span></span><span></span><span></span>
-            <small>app.py</small>
+        </div>
+      </a>
+      
+      <a class="card" href="https://tu-link-aca.com" target="_blank" rel="noopener">
+        <div class="card-bar">
+          <span></span><span></span><span></span>
+          <small>app.py</small>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">otro-proyecto</h3>
+          <p class="card-desc">Otra descripción corta. Contá el problema que resuelve o por qué lo hiciste.</p>
+          <div class="tags">
+            <span>Python</span>
+            <span>API</span>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">otro-proyecto</h3>
-            <p class="card-desc">Otra descripción corta. Contá el problema que resuelve o por qué lo hiciste.</p>
-            <div class="tags">
-              <span>Python</span>
-              <span>API</span>
-            </div>
-            <div class="card-go">
-              ver proyecto
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </div>
-        </a>
-
-        <a class="card" href="https://tu-link-aca.com" target="_blank" rel="noopener">
-          <div class="card-bar">
-            <span></span><span></span><span></span>
-            <small>index.html</small>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">tercer-proyecto</h3>
-            <p class="card-desc">Una tercera tarjeta de ejemplo para que veas cómo queda el grid con varias.</p>
-            <div class="tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JS</span>
-            </div>
-            <div class="card-go">
-              ver proyecto
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </div>
-        </a>
+          <div class="card-go">
+            ver proyecto
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </div>
+    </a>
+    
+    <a class="card" href="https://tu-link-aca.com" target="_blank" rel="noopener">
+      <div class="card-bar">
+        <span></span><span></span><span></span>
+        <small>index.html</small>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">tercer-proyecto</h3>
+        <p class="card-desc">Una tercera tarjeta de ejemplo para que veas cómo queda el grid con varias.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+        </div>
+        <div class="card-go">
+          ver proyecto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </div>
+    </div>
+  </a>
+  <div id="projects" class="cards"></div>
 
       </div>
     </section>
@@ -443,6 +449,8 @@
       <a href="mailto:rodrigosebastiandavila@gmail.com">rodrigosebastiandavila@gmail.com</a>
     </footer>
 
+
+<script src="project_parser.js"></script>
   </div>
 
 </body>
