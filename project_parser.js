@@ -9,7 +9,8 @@ async function loadProjects() {
 
   const projectCards = projects.map(project => `
     <article
-      class="card"
+      class="card${project.height ? " height-2" : ""}${project.image ? " has-image" : ""}${project.width ? " width-2" : ""}"
+      
       data-order="${project.order}"
     >
       <div class="card-bar">
@@ -18,6 +19,8 @@ async function loadProjects() {
         <span></span>
         <small>${project.file}</small>
       </div>
+
+      ${project.image ? `<img class="card-image" src="./img/${encodeURIComponent(project.image)}" alt="${project.title}">` : ""}
 
       <div class="card-body">
         <h3 class="card-title">${project.title}</h3>
@@ -28,7 +31,7 @@ async function loadProjects() {
 
         <div class="tags">
           ${project.tags
-            .split(";")
+            .split(",")
             .map(tag => `<span>${tag.trim()}</span>`)
             .join("")}
         </div>
@@ -73,13 +76,13 @@ async function loadProjects() {
 
 function parseCSV(csv) {
   const lines = csv.trim().split("\n");
-  const headers = lines[0].split(",").map(header => header.trim());
+  const headers = lines[0].split(";").map(header => header.trim());
 
   return lines.slice(1).map(line => {
-    const values = line.split(",");
+    const values = line.split(";");
 
     return headers.reduce((project, header, index) => {
-      project[header] = values[index]?.trim() || "";
+      project[header] = values[index]?.trim() || "";          
       return project;
     }, {});
   });

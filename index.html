@@ -60,7 +60,7 @@
     }
 
     .wrap {
-      max-width: 980px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -192,6 +192,7 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-auto-rows: auto;
       gap: 20px;
     }
 
@@ -212,6 +213,15 @@
       background: var(--surface-hover);
     }
 
+    .card.height-2 {
+      grid-row: span 2;
+    }
+
+    .card.width-2 {
+      grid-column: span 2;
+    }
+
+  
     .card-bar {
       display: flex;
       align-items: center;
@@ -236,6 +246,14 @@
       font-family: var(--mono);
       font-size: 11px;
       color: var(--muted);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 180px;
+      display: block;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
     }
 
     .card-body {
@@ -354,6 +372,12 @@
         padding: 48px 0;
       }
     }
+
+    @media (max-width: 667px) {
+      .card.width-2 {
+        grid-column: span 1;
+      }
+    }
   </style>
 </head>
 
@@ -382,46 +406,46 @@
   -->
 
 
-    <section >
+    <section>
       <div class="section-label">Projects</div>
       <h2 class="section-title">What I have been working on</h2>
 
-      <div id="projects" class="grid">      
-       
-          <!-- == Hardcoded card examples == -->
-          <article class="card" data-order="1">
-            <div class="card-bar">
-              <span></span><span></span><span></span>
-              <small>proyecto.js</small>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">nombre-del-proyecto</h3>
-              <p class="card-desc">Descripción corta de qué hace el proyecto y qué usaste para hacerlo.</p>
-              <div class="tags">
-                <span>React</span>
-                <span>Node.js</span>
-              </div>
-              <div class="card-actions">
-                <a class="card-go" href="https://tu-link-aca.com" target="_blank" rel="noopener">
-                  view project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </a>
-                <a class="card-go card-repo" href="https://github.com/tu-usuario/tu-repo" target="_blank" rel="noopener">
-                  view repo code
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
+      <div id="projects" class="grid">
 
+        <!-- == Hardcoded card example == 
+        <article class="card" data-order="1">
+          <div class="card-bar">
+            <span></span><span></span><span></span>
+            <small>proyecto.js</small>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">nombre-del-proyecto</h3>
+            <p class="card-desc">Descripción corta de qué hace el proyecto y qué usaste para hacerlo.</p>
+            <div class="tags">
+              <span>React</span>
+              <span>Node.js</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-go" href="https://tu-link-aca.com" target="_blank" rel="noopener">
+                view project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </a>
+              <a class="card-go card-repo" href="https://github.com/tu-usuario/tu-repo" target="_blank" rel="noopener">
+                view repo code
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      -->
       </div>
     </section>
 
